@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+    <!-- Mysql的方言 -->
+    <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+    <!-- 数据库驱动程序 -->
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <!-- 连接路径 -->
+    <property name="connection.url">jdbc:mysql://localhost:3306/student?useUnicode=true&amp;characterEncoding=UTF-8</property>
+    <property name="connection.username">root</property>
+    <property name="connection.password">123456</property>
+  	<!-- 指定SQL语句是否显示 -->
+  	<property name="hibernate.show_sql">true</property>
+  	<!-- 指定SQL语句是否格式化 -->
+  	<property name="hibernate.format_sql">true</property>
+  	<!-- 指定数据表等是否创建更新 -->
+  	<property name="hibernate.hbm2ddl.auto">update</property>
+  	<!-- 连接数据库是否使用unicode编码 -->
+ 	<property name="Connection.useUnicode">true </property> 
+ 	<!-- 连接数据库时使用的编码 -->
+ 	 <property name="connection.characterEncoding">gbk </property> 
+    <mapping resource="S1114HibernateFirst/S1HibernaterFirstMessage.hbm.xml"/>
+    <mapping resource="S1115HibernateCURD/S1Message.hbm.xml"/>
+    <mapping resource="S1116RelationMapping/S1Staff.hbm.xml"/>
+    <mapping resource="S1116RelationMapping/S2Department.hbm.xml"/>
+     <mapping class="S1116RelationMapping.S4Student"/>
+    <mapping class="S1116RelationMapping.S5Class"/>
+    </session-factory>
+</hibernate-configuration>
